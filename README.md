@@ -18,7 +18,7 @@ AWS CloudFormation은 다음과 같은 것들에 도움을 줄 수 있습니다:
 
 ***
 
-### AWS CloudFormation : 1.VPC 구성
+### AWS CloudFormation : 1. VPC 구성
 리소스 기준으로 작성하며, 하위폴더 및 네이밍 규칙으로 구분한다
 ![image](https://github.com/llwindy999ll/workshop/assets/170963109/9fbf84ca-b0b0-4c07-91db-b4b9c89f82c8)
 
@@ -134,7 +134,7 @@ Outputs:
 
 
 
-### AWS CloudFormation : 2.EC2 인스턴스 설정
+### AWS CloudFormation : 2. EC2 인스턴스 설정
 리소스 기준으로 작성하며, 하위폴더 및 네이밍 규칙으로 구분한다
 ![image](https://github.com/llwindy999ll/workshop/assets/170963109/aab6974d-2e82-4f58-b0ee-a154e2855cb5)
 
