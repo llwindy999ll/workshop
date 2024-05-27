@@ -13,4 +13,6 @@
 리소스 기준으로 작성하며, 하위폴더 및 네이밍 규칙으로 구분한다
 ```
 
-``` 
+```
+![image](https://github.com/llwindy999ll/workshop/assets/170963109/d0ee29c4-342e-49a8-9672-84cba9d7e4e8)
+
