@@ -1,5 +1,6 @@
-# workshop
-# Terraform 정책
+# Workshop
+# Session Manager를 사용하여 리눅스 인스턴스에 접근하기
+https://catalog.workshops.aws/general-immersionday/ko-KR/basic-modules/10-ec2/ec2-linux/3-ec2-1
 ***
 ## 도입배경
 
