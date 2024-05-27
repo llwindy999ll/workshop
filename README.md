@@ -1,5 +1,6 @@
 # AWS 고가용성 웹 어플리케이션 구축 실습
 
+
 ## Session Manager를 사용하여 리눅스 인스턴스에 접근하기
 - [ ] 참고 URL : https://catalog.workshops.aws/general-immersionday/ko-KR/basic-modules/10-ec2/ec2-linux/3-ec2-1
 - [ ] Session Manager는 대화형 원클릭 브라우저 기반 셸 또는 AWS CLI를 통해 Amazon EC2 인스턴스를 관리할 수 있는 AWS Systems Manager의 기능입니다. Session Manager를 사용하여 계정의 인스턴스에 세션을 시작할 수 있습니다. 세션이 시작된 후, 다른 연결 유형을 통해 bash 명령을 실행할 수 있습니다.
@@ -14,7 +15,7 @@
 
 ***
 
-### AWS CloudFormation VPC 구성
+### AWS CloudFormation : 1.VPC 구성
 리소스 기준으로 작성하며, 하위폴더 및 네이밍 규칙으로 구분한다
 ![image](https://github.com/llwindy999ll/workshop/assets/170963109/9fbf84ca-b0b0-4c07-91db-b4b9c89f82c8)
 
@@ -124,5 +125,65 @@ Outputs:
 
 
 ```
-![image](https://github.com/llwindy999ll/workshop/assets/170963109/d0ee29c4-342e-49a8-9672-84cba9d7e4e8)
+
+
+
+
+
+
+### AWS CloudFormation : 2.EC2 인스턴스 설정
+리소스 기준으로 작성하며, 하위폴더 및 네이밍 규칙으로 구분한다
+![image](https://github.com/llwindy999ll/workshop/assets/170963109/aab6974d-2e82-4f58-b0ee-a154e2855cb5)
+
+```
+
+Description: Introduction to CloudFormation SFID - Elastic Compute Cloud (EC2)
+
+Parameters:
+  PublicSubnet:
+    Description: Select a Public Subnet created in the "VPC for SFID CFN" Lab (Hint - Search for "SFID")
+    Type: 'AWS::EC2::Subnet::Id'
+  SecurityGroup:
+    Description: Select the Security Group created in the "VPC for SFID CFN" Lab (Hint - Search for "SFID")
+    Type: 'AWS::EC2::SecurityGroup::Id'
+
+Resources:
+# Create EC2 Linux
+  WebServerInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-07caf09b362be10b8"
+      InstanceType: t3a.micro
+      Tags:
+          - Key: Name
+            Value: Web Server for IMD
+      UserData: 
+        Fn::Base64:
+          !Sub |
+          #!/bin/sh
+          yum -y install httpd
+          chkconfig httpd on
+          systemctl start httpd
+          echo '<html><center><text="#252F3E" style="font-family: Amazon Ember"><h1>AWS CloudFormation is Fun !!!</h1>' > /var/www/html/index.html
+          echo '<h3><img src="https://d0.awsstatic.com/logos/powered-by-aws.png"></h3></html>' >> /var/www/html/index.html
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref SecurityGroup
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PublicSubnet
+
+Outputs:
+  PublicDNS:
+    Value: !Join 
+      - ''
+      - - 'http://'
+        - !GetAtt 
+          - WebServerInstance
+          - PublicDnsName
+    Description: Web Host Public URL
+
+
+```
 
