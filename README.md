@@ -8,6 +8,7 @@
 ***
 ## AWS CloudFormation이란
 
+- [ ] 참고 URL : https://catalog.workshops.aws/general-immersionday/ko-KR
 - [ ] AWS 리소스들을 보다 솝쉽게 모델링 및 설정하도록 하여 리소스 관리 시간을 줄이고 AWS에서 실행되는 어플리케이션 개발에 시간을 더 할애할 수 있도록 도와주는 서비스입니다. 희망하는 AWS 리소스들(예컨대 Amazon EC2 인스턴스들이나 Amazon RDS DB 인스턴스들)을 명시하는 템플릿을 만들기만하면 CloudFormation은 그러한 리소스들을 프로비저닝하고 설정하는 작업을 처리합니다.
 
 AWS CloudFormation은 다음과 같은 것들에 도움을 줄 수 있습니다:
