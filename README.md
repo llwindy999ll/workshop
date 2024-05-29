@@ -2,7 +2,8 @@
 
 ## AWS free tier 
  - https://aws.amazon.com/ko/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
- - ![Uploading image.png…]()
+ - ![image](https://github.com/llwindy999ll/workshop/assets/170963109/8fa40485-77e7-4ca8-8b3b-c010c2cb36ba)
+
 
 
 ## Session Manager를 사용하여 리눅스 인스턴스에 접근하기
