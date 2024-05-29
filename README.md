@@ -7,6 +7,12 @@
    - AWS Free tier 소개
  - [ ] STEP 2
    - Session Manager를 사용하여 리눅스 인스턴스에 접근하기
+ - [ ] STEP 3
+   - IaC 란?
+   - AWS CloudFormation 사용해서 인프라 만들기
+ - [ ] STEP 4 
+   - 비용 계산하기 
+     
 
 ## AWS free tier 
  - https://aws.amazon.com/ko/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
