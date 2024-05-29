@@ -1,5 +1,9 @@
 # AWS 고가용성 웹 어플리케이션 구축 실습
 
+## AWS free tier 
+ - https://aws.amazon.com/ko/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
+ - ![Uploading image.png…]()
+
 
 ## Session Manager를 사용하여 리눅스 인스턴스에 접근하기
 - [ ] 참고 URL : https://catalog.workshops.aws/general-immersionday/ko-KR/basic-modules/10-ec2/ec2-linux/3-ec2-1
