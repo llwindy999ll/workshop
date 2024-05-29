@@ -1,4 +1,9 @@
 # AWS 고가용성 웹 어플리케이션 구축 실습
+***
+
+ - [ ] STEP1.
+   - MFA 설정
+   - AWS Free tier 소개
 
 ## AWS free tier 
  - https://aws.amazon.com/ko/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
