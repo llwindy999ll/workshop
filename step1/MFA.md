@@ -5,12 +5,14 @@
 
 ***
 
-### Google OTP Download
-- [ ] [Google Authenticator](https://apps.apple.com/us/app/google-authenticator/id388497605) 
+### Download
+- [ ] [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en&pli=1) 
 ![image](https://github.com/llwindy999ll/workshop/assets/170963109/778d4c8c-1d03-4eb5-8ecc-d9225d6c001d)
 
 
 ***
+
+### AWS 루트계정 MFA 설정
 
 - ![image](https://github.com/llwindy999ll/workshop/assets/170963109/a754d583-9762-4b85-8c74-22941418cc45)
 
