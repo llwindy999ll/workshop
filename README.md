@@ -1,17 +1,17 @@
 # AWS 고가용성 웹 어플리케이션 구축 실습
 ***
 
- - [ ] STEP1.
+ - [ ] STEP 1
    - MFA 설정
    - AWS Free tier 소개
+ - [ ] STEP 2
+   - Session Manager를 사용하여 리눅스 인스턴스에 접근하기
 
 ## AWS free tier 
  - https://aws.amazon.com/ko/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
  ![image](https://github.com/llwindy999ll/workshop/assets/170963109/8fa40485-77e7-4ca8-8b3b-c010c2cb36ba)
 
-## AWS Root 사용자 MFA(2차인증) 설정
- - 
-![image](https://github.com/llwindy999ll/workshop/assets/170963109/42319f58-2f05-408c-a795-6dacf48d90e9)
+
 
 ## Session Manager를 사용하여 리눅스 인스턴스에 접근하기
 - [ ] 참고 URL : https://catalog.workshops.aws/general-immersionday/ko-KR/basic-modules/10-ec2/ec2-linux/3-ec2-1
