@@ -1,5 +1,5 @@
 ## 리눅스 서버 부하 테스트
-- [ ] stress : CPU, 메모리, I/O 및 디스크 부하를 생성하는 데 사용
+- [ ] stress : CPU, 메모리, I/O 및 디스크 부하를 생성해주는 툴
 
     ```
     sudo dnf install -y stress-ng
@@ -12,9 +12,10 @@
 
     ```
 
-- [ ] 테스트 접속시
+- [ ] 부하 발생 후 ALB DNS 주소로 접속
+- [ ] 접속시 캐시된 정보가 남아 있어 아래 절차로 부하분산을 확인합니다
     - 웹 브라우저 강제 새로고침 :  Ctrl + Shift + R
-    - Microsoft Edge 로 ALB DNS 접속(Chrome 사용시 정상테스트 불가)
+    - 웹 브라우저 Microsoft Edge 사용(Chrome 사용시 정상테스트 불가)
 
 ***
 
