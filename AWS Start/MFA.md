@@ -1,7 +1,7 @@
 ## AWS 2단계 인증(2FA: Two-Factor Authentication) 설정
- - 온라인상에는 수많은 위협이 도사리고 있어 단순히 비밀번호만으로는 계정을 보호할 수 없습니다.
- - 특히 2단계 인증(2FA: Two-Factor Authentication)을 활성화해두지 않은 계정은 보안이 취약한 상태라고 할 수 있습니다.
- - 현재 시중에 많은 인중 앱이 존재하며, 가장 인기가 높은 앱은 Google Authenticator입니다.
+ - 온라인상에는 수많은 위협이 있어 단순히 비밀번호만으로는 계정을 보호할 수 없습니다.
+ - 특히 2단계 인증(2FA: Two-Factor Authentication)을 활성화해두지 않은 계정은 보안에 취약합니다.
+ - 현재 시중에 많은 인중 앱이 존재하며, 유명한 앱중하나로 Google Authenticator 있습니다.
 
 ***
 

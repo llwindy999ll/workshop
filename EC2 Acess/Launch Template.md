@@ -17,53 +17,59 @@
  - DB_PASSWORD 
 
 
-```
-#!/bin/bash
+    ```
+    #!/bin/bash
 
-DB_NAME="wordpress"
-DB_USERNAME="wpadmin"
-DB_PASSWORD=""
-DB_HOST="wordpress-workshop.cluster-xxxxxxxxxx.eu-west-1.rds.amazonaws.com"
-EFS_FS_ID="fs-xxxxxxxxx"
+    DB_NAME="wordpress"
+    DB_USERNAME="wpadmin"
 
-dnf update -y
+    DB_PASSWORD="xxxxx"
+    DB_HOST="wordpress-workshop.cluster-xxxxxxxxxx.~"
+    EFS_FS_ID="fs-xxxxxxxxx"
 
-#install wget, apache server, php and efs utils
-dnf install -y httpd wget php-fpm php-mysqli php-json php amazon-efs-utils
+    dnf update -y
 
-#create wp-content mountpoint
-mkdir -p /var/www/html/wp-content
-mount -t efs $EFS_FS_ID:/ /var/www/html/wp-content
+    #install wget, apache server, php and efs utils
+    dnf install -y httpd wget php-fpm php-mysqli php-json php amazon-efs-utils
 
-#install wordpress
-cd /var/www
-wget https://wordpress.org/latest.tar.gz
-tar -xzf latest.tar.gz
-cp wordpress/wp-config-sample.php wordpress/wp-config.php
-rm -f latest.tar.gz
+    #create wp-content mountpoint
+    mkdir -p /var/www/html/wp-content
+    mount -t efs $EFS_FS_ID:/ /var/www/html/wp-content
 
-#change wp-config with DB details
-cp -rn wordpress/* /var/www/html/
-sed -i "s/database_name_here/$DB_NAME/g" /var/www/html/wp-config.php
-sed -i "s/username_here/$DB_USERNAME/g" /var/www/html/wp-config.php
-sed -i "s/password_here/$DB_PASSWORD/g" /var/www/html/wp-config.php
-sed -i "s/localhost/$DB_HOST/g" /var/www/html/wp-config.php
+    #install wordpress
+    cd /var/www
+    wget https://wordpress.org/latest.tar.gz
+    tar -xzf latest.tar.gz
+    cp wordpress/wp-config-sample.php wordpress/wp-config.php
+    rm -f latest.tar.gz
 
-#change httpd.conf file to allowoverride
-#  enable .htaccess files in Apache config using sed command
-sed -i '/<Directory "\/var\/www\/html">/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
+    #change wp-config with DB details
+    cp -rn wordpress/* /var/www/html/
+    sed -i "s/database_name_here/$DB_NAME/g" /var/www/html/wp-config.php
+    sed -i "s/username_here/$DB_USERNAME/g" /var/www/html/wp-config.php
+    sed -i "s/password_here/$DB_PASSWORD/g" /var/www/html/wp-config.php
+    sed -i "s/localhost/$DB_HOST/g" /var/www/html/wp-config.php
 
-# create phpinfo file
-echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+    #change httpd.conf file to allowoverride
+    #  enable .htaccess files in Apache config using sed command
+    sed -i '/<Directory "\/var\/www\/html">/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
 
-# Recursively change OWNER of directory /var/www and all its contents
-chown -R apache:apache /var/www
+    # create phpinfo file
+    echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
 
-systemctl restart httpd
-systemctl enable httpd
+    # Recursively change OWNER of directory /var/www and all its contents
+    chown -R apache:apache /var/www
+
+    systemctl restart httpd
+    systemctl enable httpd
 
 
-```
+    # stress tool 설치
+    dnf install -y stress
+
+    ```
+
+
 
 ### EFS 구성 확인
 ```
