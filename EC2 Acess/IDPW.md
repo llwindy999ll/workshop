@@ -18,6 +18,6 @@ sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/s
 # SSH 서비스 재시작
 echo "Restarting SSH service..."
 sudo systemctl restart sshd
-
+.
 
 ```
