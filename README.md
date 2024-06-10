@@ -19,7 +19,7 @@
 
  - [ ] EC2 서버 접속/구성
    - [Session Manager로 EC2 접근](/EC2%20Acess/Session%20Manager.md)
-   - [ID/PW로 EC2 접근](/EC2%20Acess/IDPW.md)
+   - [ID/PW로 EC2 접근](/EC2%20Access/IDPW.md)
    - [EC2 Launch Template](/EC2%20Acess/Launch%20Template.md)
   
  - [ ] [추가 LAB](/Hidden%20LAB/LAB.md) 
