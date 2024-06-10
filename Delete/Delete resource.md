@@ -74,11 +74,14 @@
    ***
 ## VPC 콘솔
 ### NAT 삭제
- - EC2 콘솔로 이동하여 ASG 선택후 삭제를 진행합니다
-    ![alt text](image-17.png)
+ - NAT 
+    ![alt text](image-20.png)
  
+### 탄력적 IP 삭제
+ - 탄력적 IP
+    ![alt text](image-21.png)
 
 ### VPC 삭제
  - EC2 콘솔로 이동하여 ASG 선택후 삭제를 진행합니다
-    ![alt text](image-17.png)
+    ![alt text](image-22.png)
  
