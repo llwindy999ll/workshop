@@ -14,8 +14,9 @@
     - https://aws.amazon.com/ko/ 에 접속해 "콘솔에 로그인" > "루트 사용자" 선택 > 로그인
 
  - [ ] AWS를 시작하기전에..
-   - [MFA 설정](/AWS%20Start/MFA.md)
    - [AWS Free tier 소개](/AWS%20Start/Free%20tier.md)
+   - [MFA 설정](/AWS%20Start/MFA.md)
+   - [IAM 설정](/AWS%20Start/MFA.md)
 
  - [ ] EC2 서버 접속/구성
    - [Session Manager로 EC2 접근](/EC2%20Acess/Session%20Manager.md)
