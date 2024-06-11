@@ -22,14 +22,28 @@
     - https://aws.amazon.com/ko/  이동
     - "콘솔에 로그인" > "루트 사용자" 선택 > ID/PW 입력 >"로그인"
 
+
+- [ ] LAB 변경사항
+    - VPC 생성방법 : 수동생성 -> 자동생성
+      ![alt text](image.png)
+    - 적용 보안그룹 : 리소스별 SG 생성 -> deault로 변경
+      - 실습과정에서 리소스별 Security Group은 모두 default SG로 변경
+      - SG 설정 과정은 default SG를 지정
+      - 예외 SG : ALB security group "WP Load Balancer"는 추가 생성이 필요하며 ALB 에 추가 적용
+        - ALB SG : "default" +  WP Load Balancer"
+    
+
  - [ ] AWS 계정 설정
    - [MFA 설정](/AWS%20Start/MFA.md)
-   - [IAM 설정](/AWS%20Start/MFA.md)
+   - [IAM 설정](/AWS%20Start/IAM.md)
+
 
  - [ ] EC2 서버 구성/접근
    - [EC2 Launch Template](/EC2%20Acess/Launch%20Template.md)
    - [Session Manager로 EC2 접근](/EC2%20Access/Session%20Manager.md)
    - [ID/PW로 EC2 접근](/EC2%20Access/IDPW.md)
+
+
 
 ## AWS 정리
  - [ ] [리소스 정리(삭제)](/Delete/Delete%20resource.md) 

@@ -5,16 +5,9 @@
     - 불필요한 인바운드 포트를 제거 
 
 ***
+### EC2 접속
+- [ ] EC2콘솔로 이동해서 "연결"버튼을 클릭합니다
+  ![alt text](image-2.png)
 
-### IAM role 생성
-
-- IAM > 역할 > 역할 만들기
-- 사용사례 EC2 선택 
- ![alt text](image-2.png)
-
-- 권한 추가, ssm 검색
-- "AmazonEC2RoleforSSM" 정책 추가
+- [ ] "연결" > "Session Manager" 탭 > "연결"
   ![alt text](image-3.png)
-
-- IAM Role 이름 설정
-  ![alt text](image-4.png)

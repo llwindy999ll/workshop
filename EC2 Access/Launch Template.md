@@ -1,20 +1,13 @@
-## AWS Session Manager란
-- [ ] Session Manager는 대화형 원클릭 브라우저 기반 셸 또는 AWS CLI를 통해 Amazon EC2 인스턴스를 관리할 수 있는 AWS Systems Manager의 기능입니다. Session Manager를 사용하여 계정의 인스턴스에 세션을 시작할 수 있습니다. 세션이 시작된 후, 다른 연결 유형을 통해 bash 명령을 실행할 수 있습니다.
-    - 관리형 노드에 대한 중앙 집중식 액세스 제어
-    - 세션 활동 로깅 및 감사
-    - 불필요한 인바운드 포트를 제거 
 
-***
-
-### launch Template UserData
+## launch Template UserData
 
  - EFS_FS_ID : 이전 랩에서생성한 EFS ID 기입
- - DB_NAME : Wordpress 데이터가 저장될 DB로 LAB2 에서 생성한 DB 이름 기입
+ - DB_NAME : "wordpress" 데이터가 저장될 DB로 LAB2 에서 생성한 DB 이름 기입
  - DB_HOST : database Writer instance의 url 입력
-    ex) wordpress-workshop.cluster-ctdnyvvewl6s.eu-west-1.rds.amazonaws.com.
+    ex) "wordpress-workshop.cluster-xxxxxxxxxx.~"
 
- - DB_USERNAME : database username 
- - DB_PASSWORD 
+ - DB_USERNAME : "wpadmin"
+ - DB_PASSWORD : "xxxx"
 
 
     ```
