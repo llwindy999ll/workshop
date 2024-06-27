@@ -26,7 +26,16 @@
       
   - [ ] LAB 변경사항
     - VPC 생성방법 : 수동생성 -> 자동생성 (교재 참조)
-      ![alt text](image.png)
+      - VPC Name 지정 : wordpress-workshop
+      - Subnet 변경 : Public subnet 2, Private subnet 4 (총 6개 Subnet 지정) 
+      - CIDR 대역 변경 
+        - VPC : 10.2.0.0/16
+        - PUB A: 10.2.0.0/24
+        - PUB B: 10.2.1.0/24
+        - App A: 10.2.2.0/24
+        - App B: 10.2.3.0/24
+        - DATA A: 10.2.4.0/24
+        - DATA B: 10.2.5.0/24
     - 적용 보안그룹 : 리소스별 SG 생성 -> deault로 변경 (교재 참조)
       - 실습과정에서 리소스별 Security Group은 모두 default SG로 변경
         - default Security Group은 별로 in/out bount rule 설정이 필요없음
@@ -35,7 +44,7 @@
 
 
 ### AWS START 
- - [ ] AWS 루트 사용자 로그인
+ - [ ] AWS 루트 사용자(계정관리자) 로그인
     - https://aws.amazon.com/ko/  이동
     - "콘솔에 로그인" > "루트 사용자" 선택 > ID/PW 입력 >"로그인"
 
