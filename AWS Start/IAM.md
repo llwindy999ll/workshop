@@ -5,13 +5,26 @@
  - MAIN LAB 을 수행할 사용자를 생성합니다
     - IAM User Name : workshop-user
 
+### User Policy(정책) 생성 
+ - IAM User 에서 사용할 정책을 사용합니다 
+ - IAM > 정책 > "정책생성" 버튼 
+   ![alt text](image-7.png)
+ - "서비스선택 : IAM" 선택 > "작업 허용됨" : "작업 필터링" 입력창에 "ListInstanceProfiles" 입력(디폴트 "허용")) > 다음
+   ![alt text](image-8.png)
+   ![alt text](image-6.png) 
+ - 정책이름 : "IAMUser-ListInstanceProfiles"
+   ![alt text](image-9.png)
+
+
  - IAM User(workshop-user) 권한 추가
     - AmazonEC2FullAccess
     - AmazonElasticFileSystemFullAccess
     - AmazonRDSFullAccess
     - AmazonSSMFullAccess
+    - IAMUser-ListInstanceProfiles
+   ![alt text](image-10.png)
 
-### IAM role 생성
+### EC2 Role 생성
 
 - IAM > 역할 > 역할 만들기
 - 사용사례 EC2 선택 > 다음

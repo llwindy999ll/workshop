@@ -49,11 +49,12 @@
     - "콘솔에 로그인" > "루트 사용자" 선택 > ID/PW 입력 >"로그인"
 
 
- - [ ] AWS 계정 설정
-   - [MFA 설정](/AWS%20Start/MFA.md)
-   - [IAM 설정](/AWS%20Start/IAM.md)
+ - [ ] AWS 루트계정 설정
+   - [MFA 2차인증 설정](/AWS%20Start/MFA.md)
+   - [IAM 사용자 및 권한 설정](/AWS%20Start/IAM.md)
+      - 정책 생성 및 EC2 서버 권한 설정
       - 일반(계정) 사용자 생성
-      - 일반(계정) 사용자로 전환
+      
 
  - [ ] 웹서버(EC2) 구성/접근
    - [ASG 사용할 템플릿 구성: EC2 Launch Template 생성](/EC2%20Access/Launch%20Template.md)
