@@ -36,14 +36,14 @@
         - App B: 10.2.3.0/24
         - DATA A: 10.2.4.0/24
         - DATA B: 10.2.5.0/24
-    - 적용 보안그룹 : 리소스별 SG 생성 -> deault로 변경 (교재 참조)
+    - 보안그룹 변경 : 리소스별 SG 생성 -> deault로 변경 (교재 참조)
       - 실습과정에서 리소스별 Security Group은 모두 default SG로 변경
         - default Security Group은 별로 in/out bount rule 설정이 필요없음
       - 예외 SG : ALB security group "WP Load Balancer"는 추가 생성이 필요하며 ALB 에 추가 적용
         - ALB SG : "default" +  WP Load Balancer"
 
 
-### AWS START 
+### LAB START 
  - [ ] AWS 루트 사용자(계정관리자) 로그인
     - https://aws.amazon.com/ko/  이동
     - "콘솔에 로그인" > "루트 사용자" 선택 > ID/PW 입력 >"로그인"
