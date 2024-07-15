@@ -6,11 +6,11 @@ Parameters:
     Type: AWS::EC2::VPC::Id
     Description: The VPC ID where the ALB will be deployed
 
-  Subnet1:
+  PublicSubnet1:
     Type: AWS::EC2::Subnet::Id
     Description: The first subnet ID for the ALB
 
-  Subnet2:
+  PublicSubnet2:
     Type: AWS::EC2::Subnet::Id
     Description: The second subnet ID for the ALB
 
@@ -40,8 +40,8 @@ Resources:
       Name: 'Wordpress-ALB'
       Scheme: internet-facing
       Subnets: 
-        - !Ref Subnet1
-        - !Ref Subnet2
+        - !Ref PublicSubnet1
+        - !Ref PublicSubnet2
       SecurityGroups:
         - !Ref ALBSecurityGroup
         - !Ref DefaultSecurityGroupId  # 디폴트 보안 그룹 ID 사용
@@ -50,13 +50,13 @@ Resources:
   ALBTargetGroupPort80:
     Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
     Properties:
-      Name: 'MyTargetGroupPort80'
+      Name: 'Wordpress-TargetGroup'
       Port: 80
       Protocol: HTTP
       VpcId: !Ref VPC
       HealthCheckProtocol: HTTP
       HealthCheckPort: '80'
-      HealthCheckPath: '/'
+      HealthCheckPath: '/phpinfo.php'
       Matcher:
         HttpCode: '200'
       TargetType: instance
@@ -64,8 +64,8 @@ Resources:
   ALBTargetGroupPort8080:
     Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
     Properties:
-      Name: 'MyTargetGroupPort8080'
-      Port: 8080
+      Name: 'simpleweb-TargetGroup'
+      Port: 80
       Protocol: HTTP
       VpcId: !Ref VPC
       HealthCheckProtocol: HTTP
