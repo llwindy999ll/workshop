@@ -9,10 +9,30 @@
  - IAM User 에서 사용할 정책을 사용합니다 
  - IAM > 정책 > "정책생성" 버튼 
    ![alt text](image-7.png)
- - "서비스선택 : IAM" 선택 > "작업 허용됨" : "작업 필터링" 입력창에 "ListInstanceProfiles" 입력(디폴트 "허용")) > 다음
+ - "서비스선택 : IAM" 선택 > "작업 허용됨" : "작업 필터링" 입력창에  
+  "ListInstanceProfiles" 입력(디폴트 "허용")  
+  "CreateInstanceProfile" 입력(디폴트 "허용")  
+  " > NEXT "
    ![alt text](image-8.png)
    ![alt text](image-6.png) 
- - 정책이름 : "IAMUser-ListInstanceProfiles"
+ - JSON 으로 편집시 아래 코드 붙여넣기
+    ```
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "VisualEditor0",
+          "Effect": "Allow",
+          "Action": [
+            "iam:CreateInstanceProfile",
+            "iam:ListInstanceProfiles"
+          ],
+          "Resource": "*"
+        }
+      ]
+    }
+    ```
+ - 정책이름 : "IAMUser-InstanceProfiles"
    ![alt text](image-9.png)
 
 
