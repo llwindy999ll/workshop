@@ -1,15 +1,23 @@
 
 ## Auto Scaling 테스트
 
-### ALB + SecurityGroup + Listner + Targetgroup 생성
+### IaC 도구 Cloudformation으로 리소스 한번에 생성하기 
+- [ ] 지금부터는 ALB + SecurityGroup + Listner + Targetgroup를 한번에 생성합니다
 - [ ] Cloudformation 콘솔로 이동합니다
     - [cf 코드 다운](/IaC/iac_alb.yaml)
     - 사이드 메뉴의 "스택" 클릭후 "스택생성" 클릭 > "새 리소스 사용" 선택
     - 템플릿준비 : "기존템플릿",  템플릿지정 : "템플릿 파일 업로드" 선택
     ![alt text](image-5.png)
     ![alt text](image-6.png)
-    ```
-    ```
+    - 템플릿 이름과 파라미터를 지정지정합니다
+        1. 생성한 Wordpress VPC를 지정합니다
+        2. VPC의 디폴트 SG를 지정합니다(VPC 콘솔에서 VPC ID 확인후 보안그룹에서 해당하는 디폴트 SG를 지정)
+        3. 생성한 Public Subnet A,B를 지정합니다        
+    ![alt text](image-7.png)
+    - 이후 단계에서는 별도 옵션지정없이 마지막까지 이동후 최종 "전송"버튼을 눌러 코드를 제출합니다
+    ![alt text](image-8.png)
+
+***
 
 ### Web Server 추가
 ### Launch Template 생성   
@@ -18,7 +26,7 @@
 
 #### 웹서버 구성
 - [ ] 부하분산 테스트를 진행할 ASG "Simple-WebServer-LT" 를 생성합니다
-    - 원본 템플릿에 이전 LAB에서 구성한 Launch Template "WP-WebServers-LT"을 선택합니다
+    - 교재 Launch Template "WP-WebServers-LT" 생성부분을 참고하고 user date(사용자 데이터)부분만 아래와 같이 변경합니다
     ![alt text](image.png)
 
     ######
