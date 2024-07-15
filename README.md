@@ -71,7 +71,7 @@
 ***
 ***
 
-## SIDE LAB  
+## SUB LAB  
  - [Auto Scaling LAB](/Side%20LAB/LAB.md) 
    - 웹서버의 부하 증가시 자동으로 서버가 증설되는 LAB  
 
