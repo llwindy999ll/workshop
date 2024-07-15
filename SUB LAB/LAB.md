@@ -2,7 +2,7 @@
 ## Auto Scaling 테스트
 
 ### IaC 도구 Cloudformation으로 리소스 한번에 생성하기 
-- [ ] 지금부터는 ALB + SecurityGroup + Listner + Targetgroup를 한번에 생성합니다
+- [ ] 지금부터는 ALB + SecurityGroup + Listener + Targetgroup를 한번에 생성합니다
 - [ ] Cloudformation 콘솔로 이동합니다
     - [cf 코드 다운](/IaC/iac_alb.yaml)
     - 사이드 메뉴의 "스택" 클릭후 "스택생성" 클릭 > "새 리소스 사용" 선택
