@@ -41,6 +41,9 @@
         - default Security Group은 별로 in/out bount rule 설정이 필요없음
       - 예외 SG : ALB security group "WP Load Balancer"는 추가 생성이 필요하며 ALB 에 추가 적용
         - ALB SG : "default" +  WP Load Balancer"
+    - ALB 생성부분 
+        - 개별 수동 생성 -> IaC 도구 Cloudformation으로 리소스 한번에 생성
+          - ALB + SecurityGroup + Listener + Targetgroup
 
 
 ### LAB START 
