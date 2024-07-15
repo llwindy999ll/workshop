@@ -1,33 +1,56 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: CloudFormation template to create an ALB that allows traffic on port 80 with a security group.
+Description: CloudFormation template to create an ALB that allows traffic on port 80 and 8080 with a security group.
+
+Parameters:
+  VPC:
+    Type: AWS::EC2::VPC::Id
+    Description: The VPC ID where the ALB will be deployed
+
+  Subnet1:
+    Type: AWS::EC2::Subnet::Id
+    Description: The first subnet ID for the ALB
+
+  Subnet2:
+    Type: AWS::EC2::Subnet::Id
+    Description: The second subnet ID for the ALB
+
+  DefaultSecurityGroupId:
+    Type: AWS::EC2::SecurityGroup::Id
+    Description: The ID of the default security group in the VPC
 
 Resources:
   ALBSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
-      GroupDescription: 'Allow traffic on port 80 for ALB'
+      GroupDescription: 'Allow traffic on port 80 and 8080 for ALB'
       VpcId: !Ref VPC
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0
 
   ALB:
     Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
     Properties:
-      Name: 'MyALB'
+      Name: 'Wordpress-ALB'
       Scheme: internet-facing
       Subnets: 
         - !Ref Subnet1
         - !Ref Subnet2
       SecurityGroups:
         - !Ref ALBSecurityGroup
+        - !Ref DefaultSecurityGroupId  # 디폴트 보안 그룹 ID 사용
 
-  ALBTargetGroup:
+
+  ALBTargetGroupPort80:
     Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
     Properties:
-      Name: 'MyTargetGroup'
+      Name: 'MyTargetGroupPort80'
       Port: 80
       Protocol: HTTP
       VpcId: !Ref VPC
@@ -38,14 +61,38 @@ Resources:
         HttpCode: '200'
       TargetType: instance
 
-  ALBListener:
+  ALBTargetGroupPort8080:
+    Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+    Properties:
+      Name: 'MyTargetGroupPort8080'
+      Port: 8080
+      Protocol: HTTP
+      VpcId: !Ref VPC
+      HealthCheckProtocol: HTTP
+      HealthCheckPort: '80'
+      HealthCheckPath: '/'
+      Matcher:
+        HttpCode: '200'
+      TargetType: instance
+
+  ALBListenerPort80:
     Type: 'AWS::ElasticLoadBalancingV2::Listener'
     Properties:
       DefaultActions:
         - Type: forward
-          TargetGroupArn: !Ref ALBTargetGroup
+          TargetGroupArn: !Ref ALBTargetGroupPort80
       LoadBalancerArn: !Ref ALB
       Port: 80
+      Protocol: HTTP
+
+  ALBListenerPort8080:
+    Type: 'AWS::ElasticLoadBalancingV2::Listener'
+    Properties:
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref ALBTargetGroupPort8080
+      LoadBalancerArn: !Ref ALB
+      Port: 8080
       Protocol: HTTP
 
 Outputs:
@@ -53,9 +100,13 @@ Outputs:
     Description: "The name of the ALB"
     Value: !Ref ALB
 
-  ALBTargetGroupArn:
-    Description: "The ARN of the ALB Target Group"
-    Value: !Ref ALBTargetGroup
+  ALBTargetGroupArnPort80:
+    Description: "The ARN of the ALB Target Group for port 80"
+    Value: !Ref ALBTargetGroupPort80
+
+  ALBTargetGroupArnPort8080:
+    Description: "The ARN of the ALB Target Group for port 8080"
+    Value: !Ref ALBTargetGroupPort8080
 
   ALBSecurityGroupId:
     Description: "The ID of the ALB Security Group"
