@@ -2,13 +2,19 @@
 - [ ] stress : CPU, 메모리, I/O 및 디스크 부하를 생성해주는 툴
 
     ```
+    # 웹서버 설치 스크립트에 포함
     sudo dnf install -y stress-ng
+
+    # bash  shell로 전환
+    bash
+    # 슈퍼유저로 전환 
+    sudo su
 
     # 1코어에 CPU 부하를 60%로 설정 (stress)
     stress-ng --cpu 1 --cpu-load 60 --timeout 60s
 
     # 메모리 부하 생성 (stress)
-    stress --vm 2 --vm-bytes 256M --timeout 60
+    stress-ng --vm 2 --vm-bytes 256M --timeout 60
 
     ```
 
