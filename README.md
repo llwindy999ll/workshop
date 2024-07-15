@@ -58,6 +58,9 @@
       - 정책 생성 및 EC2 서버 권한 설정
       - 일반(계정) 사용자 생성
       
+ - [ ] ALB 구성
+   - [IaC 도구 Cloudformation으로 생성하기](/SUB%20LAB/LAB.md) 
+   - 교재를 보고 하나씩 리소스를 생성해도 됨   
 
  - [ ] 웹서버(EC2) 구성/접근
    - [ASG 사용할 템플릿 구성: EC2 Launch Template 생성](/EC2%20Access/Launch%20Template.md)
