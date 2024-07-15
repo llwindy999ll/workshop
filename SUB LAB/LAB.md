@@ -1,31 +1,23 @@
 
 ## Auto Scaling 테스트
 
-### Security Group 생성
-- [ ] Inbound Rules 추가
-    - 이전 LAB에 구성한 SG "WP Web Servers" 포트에 [8080] 를 입력하고  
-    Source로 "WP Load Balancer" 를 선택합니다
-    ![alt text](image-1.png)
+### ALB + SecurityGroup + Listner + Targetgroup 생성
+- [ ] Cloudformation 콘솔로 이동합니다
+    - [cf 코드 다운](/IaC/iac_alb.yaml)
+    - 사이드 메뉴의 "스택" 클릭후 "스택생성" 클릭 > "새 리소스 사용" 선택
+    - 템플릿준비 : "기존템플릿",  템플릿지정 : "템플릿 파일 업로드" 선택
+    ![alt text](image-5.png)
+    ![alt text](image-6.png)
+    ```
+    ```
 
 ### Web Server 추가
-- [ ] ALB Listeners 추가
-    - 기존 리스너 포트에 [8080]을 추가합니다
-    ![alt text](image-2.png)
-    ##
-    - ALB TargetGroup으로 "EC2-TargetGroup" 생성하고, ALB Target으로 등록합니다
-    - 여기서 Listener 는 "HTTP : 8080" 을 사용합니다
-    ![alt text](image-3.png)
-    ##
-    - ALB TargetGroup에서 "Protocol : Port" 는 [80]을 입력합니다
-    - Health checks 는 "/"를 사용합니다
-    ![alt text](image-4.png)
-
 ### Launch Template 생성   
 - 접속된 EC2 정보를 표시해주는 간단한 웹 서버를  
 부하가 증가하면 AutoScale-out 이 되도록 구성해 봅니다
 
 #### 웹서버 구성
-- [ ] 부하분산 테스트를 진행할 ASG "ASG-WebEC2-LT" 를 생성합니다
+- [ ] 부하분산 테스트를 진행할 ASG "Simple-WebServer-LT" 를 생성합니다
     - 원본 템플릿에 이전 LAB에서 구성한 Launch Template "WP-WebServers-LT"을 선택합니다
     ![alt text](image.png)
 
